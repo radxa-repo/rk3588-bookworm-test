@@ -60,7 +60,7 @@ jobs:
         ../src/bin/rsdk infra-repo-sync --origin "" --label "" "${suites[@]}"
         git add pkgs.json
         
-        pushd "$HOME/.aptly/public/*/"
+        pushd "$HOME"/.aptly/public/*/
             cp "$OLDPWD/pkgs.json" ./
             pandoc --from gfm --to html --standalone "$OLDPWD/README.md" --output index.html
             find . > files.list

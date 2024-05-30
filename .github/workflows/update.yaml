@@ -12,7 +12,7 @@ jobs:
     - name: "Checkout rsdk"
       uses: "actions/checkout@v4"
       with:
-        ref: "ed7493c2fd85a7ec74d5725235eb47049b559c1c"
+        ref: "b65909b67045b11bb702c4d9be39b5c2696f695d"
         repository: "RadxaOS-SDK/rsdk"
     - name: "Checkout current repo"
       uses: "actions/checkout@v4"
@@ -60,7 +60,7 @@ jobs:
         ../src/bin/rsdk infra-repo-sync --origin "" --label "" "${suites[@]}"
         git add pkgs.json
         
-        pushd "$HOME"/.aptly/public/*/
+        pushd "$HOME/.aptly/public/"
             cp "$OLDPWD/pkgs.json" ./
             pandoc --from gfm --to html --standalone "$OLDPWD/README.md" --output index.html
             find . > files.list

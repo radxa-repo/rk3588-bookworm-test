@@ -4,8 +4,13 @@
 
 ## Content
 
-* [Published GitHub Releases](pkgs.json)
-* [File index](files.list)
+* [Published GitHub Releases](https://radxa-repo.github.io/rk3588-bookworm-test/pkgs.json)
+* [File index](https://radxa-repo.github.io/rk3588-bookworm-test/files.list)
+
+## Report issues
+
+The issue list for this repository should be strictly related to the package repository service itself.  
+If your issue is related to a specific package's usage, you should file issues under package's repository over at [`radxa-pkg`](https://github.com/radxa-pkg).
 
 ## Usage
 
@@ -17,6 +22,6 @@ curl -L --output "$keyring" "https://github.com/radxa-pkg/radxa-archive-keyring/
 sudo dpkg -i "$keyring"
 rm -f "$keyring"
 # Add apt package repo
-sudo tee /etc/apt/sources.list.d/20-radxa.list <<< "deb [signed-by=/usr/share/keyrings/radxa-archive-keyring.gpg] https://radxa-repo.github.io/rk3588-bookworm-test/ rk3588-bookworm-test main"
+sudo tee /etc/apt/sources.list.d/70-radxa.list <<< "deb [signed-by=/usr/share/keyrings/radxa-archive-keyring.gpg] https://radxa-repo.github.io/rk3588-bookworm-test/ rk3588-bookworm-test main"
 sudo apt-get update
 ```
